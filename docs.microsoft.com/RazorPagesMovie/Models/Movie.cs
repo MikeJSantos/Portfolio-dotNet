@@ -13,5 +13,16 @@ namespace RazorPagesMovie.Models
         
         public string Genre { get; set; }
         public decimal Price { get; set; }
+
+        public Movie() { }
+
+        /// Syntactic sugar for SeedData.Initialize()
+        public Movie(string title, string releaseDate, string genre, decimal price)
+        {
+            Title       = title;
+            ReleaseDate = DateTime.Parse(releaseDate);
+            Genre       = genre;
+            Price       = price;
+        }
     }
 }
