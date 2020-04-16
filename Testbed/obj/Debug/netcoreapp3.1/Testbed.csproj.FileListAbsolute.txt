@@ -1,0 +1,13 @@
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.csprojAssemblyReference.cache
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.csproj.CoreCompileInputs.cache
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.AssemblyInfoInputs.cache
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.AssemblyInfo.cs
+C:\Projects\Portfolio-dotNet\Testbed\bin\Debug\netcoreapp3.1\Testbed.exe
+C:\Projects\Portfolio-dotNet\Testbed\bin\Debug\netcoreapp3.1\Testbed.deps.json
+C:\Projects\Portfolio-dotNet\Testbed\bin\Debug\netcoreapp3.1\Testbed.runtimeconfig.json
+C:\Projects\Portfolio-dotNet\Testbed\bin\Debug\netcoreapp3.1\Testbed.runtimeconfig.dev.json
+C:\Projects\Portfolio-dotNet\Testbed\bin\Debug\netcoreapp3.1\Testbed.dll
+C:\Projects\Portfolio-dotNet\Testbed\bin\Debug\netcoreapp3.1\Testbed.pdb
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.dll
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.pdb
+C:\Projects\Portfolio-dotNet\Testbed\obj\Debug\netcoreapp3.1\Testbed.genruntimeconfig.cache
