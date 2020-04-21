@@ -1,8 +1,6 @@
-using System;
 using System.Linq;
-using System.Collections.Generic;
 
-namespace Testbed
+namespace LeetCode
 {
     public class MaxSubArray
     {

@@ -23,10 +23,7 @@ mono_crash.*
 [Rr]eleases/
 x64/
 x86/
-<<<<<<< HEAD
 [Ww][Ii][Nn]32/
-=======
->>>>>>> d0ad18359fc106bed972d5680b667a9023742144
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
@@ -65,12 +62,9 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
-<<<<<<< HEAD
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
 
-=======
->>>>>>> d0ad18359fc106bed972d5680b667a9023742144
 # StyleCop
 StyleCopReport.xml
 
@@ -147,12 +141,9 @@ _TeamCity*
 .axoCover/*
 !.axoCover/settings.json
 
-<<<<<<< HEAD
 # Coverlet is a free, cross platform Code Coverage Tool
 coverage*[.json, .xml, .info]
 
-=======
->>>>>>> d0ad18359fc106bed972d5680b667a9023742144
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
@@ -364,3 +355,15 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+## Ignore Visual Studio Code files
+## https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
