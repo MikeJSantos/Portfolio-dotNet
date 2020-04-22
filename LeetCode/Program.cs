@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            RunMaxProfit();
+            RunBackspaceCompare();
         }
 
         static void RunCountElements()
@@ -52,6 +52,16 @@
             var output2 = new MiddleNode().Run(head2);
 
             System.Console.WriteLine();
+        }
+
+        static void RunBackspaceCompare()
+        {
+            bool output;
+
+            output = BackspaceCompare.Run("ab#c", "ad#c"); // true, "ac"
+            output = BackspaceCompare.Run("ab##", "c#d#"); // true, ""
+            output = BackspaceCompare.Run("a##c", "#a#c"); // true, "c"
+            output = BackspaceCompare.Run("a#c", "b");     // false, "c" > "b"
         }
     }
 }
