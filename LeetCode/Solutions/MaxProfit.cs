@@ -6,37 +6,60 @@ namespace LeetCode
 {
     public class MaxProfit
     {
-        // Input: [7,1,5,3,6,4]
-        // Output: 7
-        // Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
-        //              Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
-        public int Run(int[] prices)
+        public static int Run(int[] prices)
         {
             if (prices.Length < 2) return 0;
 
-            var buyDate = 0;
-            var sellDate = -1;
-            var previousProfit = -1;
+            Console.Out.WriteLine($"[{string.Join(",", prices)}]");
 
-            for (var i = 1; i < prices.Length; i++)
+            var optimalBuyDate = -1;
+            var totalProfit = 0;
+
+            for (var i = 0; i < prices.Length - 1; i++)
             {
-                if (prices[i] < prices[buyDate]) // TODO: factor in sell date
+                // Find optimal buy date, in cases where prices are falling
+                if (optimalBuyDate == -1 || prices[i] < prices[optimalBuyDate])
                 {
-                    buyDate = i;
+                    optimalBuyDate = i;
+                    if (i + 1 < prices.Length - 1) continue;
                 }
-                else
+
+                var buyPrice = prices[optimalBuyDate];
+                var optimalProfitToDayRatio = 0d;
+                var optimalSellDate = -1;
+
+                for (var sellDate = i; sellDate < prices.Length; sellDate++)
                 {
-                    var profit = prices[i];
-                    for (var j = i-1; j > buyDate; j--)
+                    var sellPrice = prices[sellDate];
+
+                    // Ignore dates that don't turn a profit
+                    if (buyPrice >= sellPrice)
+                        continue;
+
+                    var profit = sellPrice - buyPrice;
+                    var daysOnMarket = sellDate - optimalBuyDate;
+                    var profitToDayRatio = (double)profit / daysOnMarket;
+
+                    if (optimalSellDate == -1 || profitToDayRatio >= optimalProfitToDayRatio && profit > prices[optimalSellDate] - buyPrice)
                     {
-                        
+                        optimalProfitToDayRatio = profitToDayRatio;
+                        optimalSellDate = sellDate;
                     }
                 }
-                
+
+                if (optimalSellDate != -1)
+                {
+                    var transactionProfit = prices[optimalSellDate] - buyPrice;
+                    totalProfit += transactionProfit;
+                    Console.Out.WriteLine($"- Profit: {transactionProfit}, Buy day {optimalBuyDate} @ {prices[optimalBuyDate]}, " +
+                                          $"Sell day {optimalSellDate} @ {prices[optimalSellDate]}");
+                    optimalBuyDate = -1;
+                    i = optimalSellDate;
+                }
             }
 
-
-            throw new NotImplementedException();
+            Console.Out.WriteLine($"Total Profit: {totalProfit}");
+            return totalProfit;
         }
     }
 }

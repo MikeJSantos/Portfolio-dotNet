@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            RunCountElements();
+            RunMaxProfit();
         }
 
         static void RunCountElements()
@@ -24,14 +24,23 @@
 
         static void RunMaxProfit()
         {
-            var intArray = new int[] { 7, 1, 5, 3, 6, 4 }; // 7
-            var retVal = new MaxProfit().Run(intArray);
+            int[] intArray;
+            int retVal ;
 
-            intArray = new int[] { 1, 2, 3, 4, 5 }; // 4
-            retVal = new MaxProfit().Run(intArray);
+            // intArray = new int[] { 7, 1, 5, 3, 6, 4 }; // 7
+            // retVal = MaxProfit.Run(intArray);
 
-            intArray = new int[] { 7, 6, 4, 3, 1 }; // 0
-            retVal = new MaxProfit().Run(intArray);
+            // intArray = new int[] { 1, 2, 3, 4, 5 }; // 4
+            // retVal = MaxProfit.Run(intArray);
+
+            // intArray = new int[] { 7, 6, 4, 3, 1 }; // 0
+            // retVal = MaxProfit.Run(intArray);
+
+            // intArray = new int[] { 1,2 }; // 1
+            // retVal = MaxProfit.Run(intArray);
+
+            intArray = new int[] { 2,1,4,5,2,9,7 }; // 11
+            retVal = MaxProfit.Run(intArray);
         }
 
         static void RunMiddleNode()
