@@ -4,7 +4,22 @@
     {
         static void Main(string[] args)
         {
-            RunMiddleNode();
+            RunCountElements();
+        }
+
+        static void RunCountElements()
+        {
+            var arr = new int[] {1,2,3}; // 2
+            var retVal = CountElements.Run(arr);
+
+            arr = new int[] {1,1,3,3,5,5,7,7}; // 0
+            retVal = CountElements.Run(arr);
+
+            arr = new int[] {1,3,2,3,5,0}; // 3
+            retVal = CountElements.Run(arr);
+
+            arr = new int[] {1,1,1,1,2,2}; // 2
+            retVal = CountElements.Run(arr);
         }
 
         static void RunMaxProfit()
