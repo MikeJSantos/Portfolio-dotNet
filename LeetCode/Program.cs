@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            RunBackspaceCompare();
+            RunMinStack();
         }
 
         static void RunCountElements()
@@ -62,6 +62,20 @@
             output = BackspaceCompare.Run("ab##", "c#d#"); // true, ""
             output = BackspaceCompare.Run("a##c", "#a#c"); // true, "c"
             output = BackspaceCompare.Run("a#c", "b");     // false, "c" > "b"
+        }
+
+        static void RunMinStack()
+        {
+            var retVal = 0;
+            var minStack = new MinStack();
+            minStack.Push(-2);
+            minStack.Push(0);
+            minStack.Push(-3);
+            retVal = minStack.GetMin(); // return -3
+            minStack.Pop();
+            minStack.ToString();
+            retVal = minStack.Top();    // return 0
+            retVal = minStack.GetMin(); // return -2
         }
     }
 }
