@@ -83,7 +83,14 @@
 
         static void RunLastStoneWeight()
         {
+            int[] stones;
+            int retVal;
 
+            stones = new int[] {2,7,4,1,8,1}; // 1
+            retVal = s.LastStoneWeight(stones);
+
+            stones = new int[] {7,6,7,6,9}; // 3
+            retVal = s.LastStoneWeight(stones);
         }
     }
 }
