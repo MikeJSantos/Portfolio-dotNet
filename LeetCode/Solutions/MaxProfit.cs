@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace LeetCode
 {
-    public class MaxProfit
+    public partial class Solution
     {
-        public static int Run(int[] prices)
+        public int MaxProfit(int[] prices)
         {
             if (prices.Length < 2) return 0;
 

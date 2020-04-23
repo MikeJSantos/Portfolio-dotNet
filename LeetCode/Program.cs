@@ -2,24 +2,27 @@
 {
     class Program
     {
+        static Solution s;
+
         static void Main(string[] args)
         {
-            RunMinStack();
+            s = new Solution();
+            RunLastStoneWeight();
         }
 
         static void RunCountElements()
         {
             var arr = new int[] {1,2,3}; // 2
-            var retVal = CountElements.Run(arr);
+            var retVal = s.CountElements(arr);
 
             arr = new int[] {1,1,3,3,5,5,7,7}; // 0
-            retVal = CountElements.Run(arr);
+            retVal = s.CountElements(arr);
 
             arr = new int[] {1,3,2,3,5,0}; // 3
-            retVal = CountElements.Run(arr);
+            retVal = s.CountElements(arr);
 
             arr = new int[] {1,1,1,1,2,2}; // 2
-            retVal = CountElements.Run(arr);
+            retVal = s.CountElements(arr);
         }
 
         static void RunMaxProfit()
@@ -27,20 +30,20 @@
             int[] intArray;
             int retVal ;
 
-            // intArray = new int[] { 7, 1, 5, 3, 6, 4 }; // 7
-            // retVal = MaxProfit.Run(intArray);
+            intArray = new int[] { 7, 1, 5, 3, 6, 4 }; // 7
+            retVal = s.MaxProfit(intArray);
 
-            // intArray = new int[] { 1, 2, 3, 4, 5 }; // 4
-            // retVal = MaxProfit.Run(intArray);
+            intArray = new int[] { 1, 2, 3, 4, 5 }; // 4
+            retVal = s.MaxProfit(intArray);
 
-            // intArray = new int[] { 7, 6, 4, 3, 1 }; // 0
-            // retVal = MaxProfit.Run(intArray);
+            intArray = new int[] { 7, 6, 4, 3, 1 }; // 0
+            retVal = s.MaxProfit(intArray);
 
-            // intArray = new int[] { 1,2 }; // 1
-            // retVal = MaxProfit.Run(intArray);
+            intArray = new int[] { 1,2 }; // 1
+            retVal = s.MaxProfit(intArray);
 
             intArray = new int[] { 2,1,4,5,2,9,7 }; // 11
-            retVal = MaxProfit.Run(intArray);
+            retVal = s.MaxProfit(intArray);
         }
 
         static void RunMiddleNode()
@@ -58,10 +61,10 @@
         {
             bool output;
 
-            output = BackspaceCompare.Run("ab#c", "ad#c"); // true, "ac"
-            output = BackspaceCompare.Run("ab##", "c#d#"); // true, ""
-            output = BackspaceCompare.Run("a##c", "#a#c"); // true, "c"
-            output = BackspaceCompare.Run("a#c", "b");     // false, "c" > "b"
+            output = s.BackspaceCompare("ab#c", "ad#c"); // true, "ac"
+            output = s.BackspaceCompare("ab##", "c#d#"); // true, ""
+            output = s.BackspaceCompare("a##c", "#a#c"); // true, "c"
+            output = s.BackspaceCompare("a#c", "b");     // false, "c" > "b"
         }
 
         static void RunMinStack()
@@ -76,6 +79,11 @@
             minStack.ToString();
             retVal = minStack.Top();    // return 0
             retVal = minStack.GetMin(); // return -2
+        }
+
+        static void RunLastStoneWeight()
+        {
+
         }
     }
 }

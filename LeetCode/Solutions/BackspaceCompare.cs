@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace LeetCode
 {
-    public class BackspaceCompare
+    public partial class Solution
     {
-        public static bool Run(string S, string T)
+        public bool BackspaceCompare(string S, string T)
         {
             var parsedS = ParseBackspace(S);
             var parsedT = ParseBackspace(T);
@@ -17,7 +17,7 @@ namespace LeetCode
             return retVal;
         }
 
-        private static string ParseBackspace(string str)
+        private string ParseBackspace(string str)
         {
             var backspaceCounter = 0;
             var characterStack = new Stack<char>();

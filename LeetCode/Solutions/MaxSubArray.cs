@@ -2,9 +2,9 @@ using System.Linq;
 
 namespace LeetCode
 {
-    public class MaxSubArray
+    public partial class Solution 
     {
-        public int Run(int[] nums)
+        public int MaxSubArray(int[] nums)
         {
             switch (nums.Length)
             {

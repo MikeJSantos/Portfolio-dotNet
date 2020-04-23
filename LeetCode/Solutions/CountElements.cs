@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace LeetCode
 {
-    public class CountElements
+    public partial class Solution 
     {
-        public static int Run(int[] arr)
+        public int CountElements(int[] arr)
         {
             if (arr.Length < 2) return 0;
 

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace LeetCode
 {
-    public class GroupAnagrams
+    public partial class Solution 
     {
-        public IList<IList<string>> Run(string[] strs)
+        public IList<IList<string>> GroupAnagrams(string[] strs)
         {
             var strDict = new Dictionary<string, IList<string>>();
 
