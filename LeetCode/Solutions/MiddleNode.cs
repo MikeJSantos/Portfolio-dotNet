@@ -54,16 +54,16 @@ namespace LeetCode
         }
     }
 
-    public class MiddleNode
+    public partial class Solution
     {
-        public ListNode Run(ListNode head)
+        public ListNode MiddleNode(ListNode head)
         {
-            var tuple = Recurse(head, 1);
+            var tuple = MiddleNodeRecurse(head, 1);
             return tuple.Item1;
         }
 
         // Tuple: ListNode, int (nodeCount)
-        public Tuple<ListNode, int> Recurse(ListNode node, int nodeCount)
+        public Tuple<ListNode, int> MiddleNodeRecurse(ListNode node, int nodeCount)
         {
             //Console.Out.WriteLine($"{node.val} => [{ListNode.Output(node)}], {nodeCount}");
 
@@ -71,7 +71,7 @@ namespace LeetCode
             if (node.next == null)
                 return new Tuple<ListNode, int> (node, nodeCount);
 
-            var tuple = Recurse(node.next, nodeCount + 1);
+            var tuple = MiddleNodeRecurse(node.next, nodeCount + 1);
 
             if ((tuple.Item2 % 2 == 0 && (nodeCount - 1) * 2 == tuple.Item2) ||
                 (tuple.Item2 % 2 == 1 && nodeCount * 2 == tuple.Item2 + 1))
