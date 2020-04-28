@@ -111,5 +111,22 @@ namespace LeetCode
             shift = new int[][] { new int[] {1,1}, new int[] {1,1}, new int[] {0,2}, new int[] {1,3} };
             Assert.Equal("efgabcd", s.StringShift(inputStr, shift));
         }
+
+        [Fact]
+        public void DiameterOfBinaryTreeTest()
+        {
+            var s = new Solution();
+
+            var leftNode = new Solution.TreeNode(2,4,5);
+            var head = new Solution.TreeNode(1, leftNode, new Solution.TreeNode(3));
+
+            Assert.Equal(3, s.DiameterOfBinaryTree(head));
+
+            head = new Solution.TreeNode(1);
+            Assert.Equal(0, s.DiameterOfBinaryTree(head));
+
+            head = new Solution.TreeNode(1, new Solution.TreeNode(2), null);
+            Assert.Equal(1, s.DiameterOfBinaryTree(head));
+        }
     }
 }
