@@ -188,5 +188,15 @@ namespace LeetCode
             Assert.Equal(2, s.FindComplement(5));
             Assert.Equal(0, s.FindComplement(1));
         }
+
+        [Fact]
+        public void FirstBadVersionTest()
+        {
+            var s = new Solution();
+
+            // Assert.Equal(4, s.FirstBadVersion(5));
+            // Assert.Equal(3, s.FirstBadVersion(4));
+            Assert.Equal(1150769282, s.FirstBadVersion(1420736637));
+        }
     }
 }
