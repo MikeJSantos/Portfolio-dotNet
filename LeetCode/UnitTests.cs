@@ -90,10 +90,10 @@ namespace LeetCode
         public void BackspaceCompareTest()
         {
             var s = new Solution();
-            Assert.Equal(true, s.BackspaceCompare("ab#c", "ad#c")); // true, "ac"
-            Assert.Equal(true, s.BackspaceCompare("ab##", "c#d#")); // true, ""
-            Assert.Equal(true, s.BackspaceCompare("a##c", "#a#c")); // true, "c"
-            Assert.Equal(false, s.BackspaceCompare("a#c", "b"));    // false, "c" > "b"
+            Assert.True(s.BackspaceCompare("ab#c", "ad#c")); // true, "ac"
+            Assert.True(s.BackspaceCompare("ab##", "c#d#")); // true, ""
+            Assert.True(s.BackspaceCompare("a##c", "#a#c")); // true, "c"
+            Assert.False(s.BackspaceCompare("a#c", "b"));    // false, "c" > "b"
         }
 
         [Fact]
@@ -127,6 +127,19 @@ namespace LeetCode
 
             head = new Solution.TreeNode(1, new Solution.TreeNode(2), null);
             Assert.Equal(1, s.DiameterOfBinaryTree(head));
+        }
+
+        [Fact]
+        public void FirstUniqCharacterTest()
+        {
+            var s = new Solution();
+            string str;
+            
+            str = "leetcode";
+            Assert.Equal(0, s.FirstUniqChar(str));
+
+            str = "loveleetcode";
+            Assert.Equal(2, s.FirstUniqChar(str));
         }
     }
 }
