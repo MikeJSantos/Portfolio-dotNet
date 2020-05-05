@@ -156,5 +156,28 @@ namespace LeetCode
             S = "ZZ";
             Assert.Equal(0, s.NumJewelsInStones(J, S));
         }
+
+        [Fact]
+        public void CanConstructTest()
+        {
+            var s = new Solution();
+            string ransomNote, magazine;
+
+            ransomNote = "give me the money";
+            magazine   = "given all the memes that make money";
+            Assert.True(s.CanConstruct(ransomNote, magazine));
+
+            ransomNote = "a";
+            magazine   = "b";
+            Assert.False(s.CanConstruct(ransomNote, magazine));
+
+            ransomNote = "aa";
+            magazine   = "ab";
+            Assert.False(s.CanConstruct(ransomNote, magazine));
+
+            ransomNote = "aa";
+            magazine   = "aab";
+            Assert.True(s.CanConstruct(ransomNote, magazine));
+        }
     }
 }
