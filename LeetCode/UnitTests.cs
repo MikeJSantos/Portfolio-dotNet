@@ -9,17 +9,17 @@ namespace LeetCode
         {
             var s = new Solution();
             int[] arr;
-            
-            arr = new int[] {1,2,3}; // 2
-            Assert.Equal(2 , s.CountElements(arr));
 
-            arr = new int[] {1,1,3,3,5,5,7,7}; // 0
+            arr = new int[] { 1, 2, 3 }; // 2
+            Assert.Equal(2, s.CountElements(arr));
+
+            arr = new int[] { 1, 1, 3, 3, 5, 5, 7, 7 }; // 0
             Assert.Equal(0, s.CountElements(arr));
 
-            arr = new int[] {1,3,2,3,5,0}; // 3
-            Assert.Equal(3 , s.CountElements(arr));
+            arr = new int[] { 1, 3, 2, 3, 5, 0 }; // 3
+            Assert.Equal(3, s.CountElements(arr));
 
-            arr = new int[] {1,1,1,1,2,2}; // 4
+            arr = new int[] { 1, 1, 1, 1, 2, 2 }; // 4
             Assert.Equal(4, s.CountElements(arr));
         }
 
@@ -38,10 +38,10 @@ namespace LeetCode
             intArray = new int[] { 7, 6, 4, 3, 1 }; // 0
             Assert.Equal(0, s.MaxProfit(intArray));
 
-            intArray = new int[] { 1,2 }; // 1
+            intArray = new int[] { 1, 2 }; // 1
             Assert.Equal(1, s.MaxProfit(intArray));
 
-            intArray = new int[] { 2,1,4,5,2,9,7 }; // 11
+            intArray = new int[] { 2, 1, 4, 5, 2, 9, 7 }; // 11
             Assert.Equal(11, s.MaxProfit(intArray));
             // TODO: Fix this!
         }
@@ -52,10 +52,10 @@ namespace LeetCode
             var s = new Solution();
             ListNode node;
 
-            node = ListNode.Build(new int[] {1,2,3,4,5});
+            node = ListNode.Build(new int[] { 1, 2, 3, 4, 5 });
             Assert.Equal(3, s.MiddleNode(node).val);
 
-            node = ListNode.Build(new int[] {1,2,3,4,5,6});
+            node = ListNode.Build(new int[] { 1, 2, 3, 4, 5, 6 });
             Assert.Equal(4, s.MiddleNode(node).val);
         }
 
@@ -79,10 +79,10 @@ namespace LeetCode
             var s = new Solution();
             int[] stones;
 
-            stones = new int[] {2,7,4,1,8,1};
+            stones = new int[] { 2, 7, 4, 1, 8, 1 };
             Assert.Equal(1, s.LastStoneWeight(stones));
 
-            stones = new int[] {7,6,7,6,9};
+            stones = new int[] { 7, 6, 7, 6, 9 };
             Assert.Equal(3, s.LastStoneWeight(stones));
         }
 
@@ -104,11 +104,11 @@ namespace LeetCode
             int[][] shift;
 
             inputStr = "abc";
-            shift = new int[][] { new int[] {0,1}, new int[] {1,2} };
+            shift = new int[][] { new int[] { 0, 1 }, new int[] { 1, 2 } };
             Assert.Equal("cab", s.StringShift(inputStr, shift));
 
             inputStr = "abcdefg";
-            shift = new int[][] { new int[] {1,1}, new int[] {1,1}, new int[] {0,2}, new int[] {1,3} };
+            shift = new int[][] { new int[] { 1, 1 }, new int[] { 1, 1 }, new int[] { 0, 2 }, new int[] { 1, 3 } };
             Assert.Equal("efgabcd", s.StringShift(inputStr, shift));
         }
 
@@ -118,7 +118,7 @@ namespace LeetCode
             var s = new Solution();
             Solution.TreeNode head;
 
-            var leftNode = new Solution.TreeNode(2,4,5);
+            var leftNode = new Solution.TreeNode(2, 4, 5);
             head = new Solution.TreeNode(1, leftNode, new Solution.TreeNode(3));
             Assert.Equal(3, s.DiameterOfBinaryTree(head));
 
@@ -141,7 +141,7 @@ namespace LeetCode
         {
             var s = new Solution();
             string str;
-            
+
             str = "leetcode";
             Assert.Equal(0, s.FirstUniqChar(str));
 
@@ -171,19 +171,19 @@ namespace LeetCode
             string ransomNote, magazine;
 
             ransomNote = "give me the money";
-            magazine   = "given all the memes that make money";
+            magazine = "given all the memes that make money";
             Assert.True(s.CanConstruct(ransomNote, magazine));
 
             ransomNote = "a";
-            magazine   = "b";
+            magazine = "b";
             Assert.False(s.CanConstruct(ransomNote, magazine));
 
             ransomNote = "aa";
-            magazine   = "ab";
+            magazine = "ab";
             Assert.False(s.CanConstruct(ransomNote, magazine));
 
             ransomNote = "aa";
-            magazine   = "aab";
+            magazine = "aab";
             Assert.True(s.CanConstruct(ransomNote, magazine));
         }
 
@@ -204,6 +204,22 @@ namespace LeetCode
             // Assert.Equal(4, s.FirstBadVersion(5));
             // Assert.Equal(3, s.FirstBadVersion(4));
             Assert.Equal(1150769282, s.FirstBadVersion(1420736637));
+        }
+
+        [Fact]
+        public void MajorityElementTest()
+        {
+            var s = new Solution();
+            int[] array;
+
+            array = new int[] { 3, 2, 3 };
+            Assert.Equal(3, s.MajorityElement(array));
+
+            array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
+            Assert.Equal(2, s.MajorityElement(array));
+
+            array = new int[] { 6, 5, 5 };
+            Assert.Equal(5, s.MajorityElement(array));
         }
     }
 }
