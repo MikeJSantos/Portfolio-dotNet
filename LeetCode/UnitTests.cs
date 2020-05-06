@@ -116,10 +116,10 @@ namespace LeetCode
         public void DiameterOfBinaryTreeTest()
         {
             var s = new Solution();
+            Solution.TreeNode head;
 
             var leftNode = new Solution.TreeNode(2,4,5);
-            var head = new Solution.TreeNode(1, leftNode, new Solution.TreeNode(3));
-
+            head = new Solution.TreeNode(1, leftNode, new Solution.TreeNode(3));
             Assert.Equal(3, s.DiameterOfBinaryTree(head));
 
             head = new Solution.TreeNode(1);
@@ -127,6 +127,13 @@ namespace LeetCode
 
             head = new Solution.TreeNode(1, new Solution.TreeNode(2), null);
             Assert.Equal(1, s.DiameterOfBinaryTree(head));
+
+            // Input:
+            // [4,-7,-3,null,null,-9,-3,9,-7,-4,null,6,null,-6,-6,null,null,0,6,5,null,9,null,null,-1,-4,null,null,null,-2]
+            // Output:
+            // 7
+            // Expected:
+            // 8
         }
 
         [Fact]

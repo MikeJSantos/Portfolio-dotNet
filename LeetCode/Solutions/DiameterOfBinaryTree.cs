@@ -28,7 +28,7 @@ namespace LeetCode
 
         public int DiameterOfBinaryTree(TreeNode root)
         {
-            if (root == null || root.left == null || root.right == null) return 0;
+            if (root == null) return 0;
             return DiameterOfBinaryTreeRecurse(root, 0);
         }
 
@@ -39,7 +39,10 @@ namespace LeetCode
             var leftDepth  = DiameterOfBinaryTreeRecurse(node.left, depth + 1);
             var rightDepth = DiameterOfBinaryTreeRecurse(node.right, depth + 1);
 
-            return leftDepth >= rightDepth ? leftDepth : rightDepth;
+            if (depth == 0)
+                return leftDepth + rightDepth;
+            else
+                return leftDepth >= rightDepth ? leftDepth : rightDepth;
         }
     }
 }
