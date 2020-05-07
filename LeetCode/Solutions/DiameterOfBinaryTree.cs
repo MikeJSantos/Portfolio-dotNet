@@ -10,10 +10,14 @@ namespace LeetCode
 
         private int DiameterOfBinaryTreeRecurse(TreeNode node, int depth)
         {
-            if (node == null) return depth - 1;
+            if (node == null) return depth - 1; // Redundant?
 
-            var leftDepth  = DiameterOfBinaryTreeRecurse(node.left, depth + 1);
-            var rightDepth = DiameterOfBinaryTreeRecurse(node.right, depth + 1);
+            var leftDepth  = node.left != null
+                ? DiameterOfBinaryTreeRecurse(node.left, depth + 1)
+                : depth;
+            var rightDepth = node.right != null
+                ? DiameterOfBinaryTreeRecurse(node.right, depth + 1)
+                : depth;
 
             if (depth == 0)
                 return leftDepth + rightDepth;

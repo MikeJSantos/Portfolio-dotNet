@@ -1,3 +1,6 @@
+using System.Linq;
+using System.Collections.Generic;
+
 namespace LeetCode
 {
     public class TreeNode
@@ -19,6 +22,55 @@ namespace LeetCode
             val = x;
             left = new TreeNode(leftValue);
             right = new TreeNode(rightValue);
+        }
+
+        public override string ToString()
+        {
+            return val.ToString();
+        }
+
+        public static TreeNode Build(int?[] array)
+        {
+            if (array == null || array.Length == 0 || !array[0].HasValue)
+                return null;
+
+            TreeNode root = null, parent = null, node;
+            var nodesNeedingChildren = new Queue<TreeNode>();
+            var nodesNeedingParents  = new Queue<TreeNode>();
+
+            foreach (var element in array)
+            {
+                node = new TreeNode(element.HasValue ? element.Value : int.MinValue);
+                nodesNeedingParents.Enqueue(node);
+
+                if (element.HasValue)
+                    nodesNeedingChildren.Enqueue(node);
+            }
+
+            root = nodesNeedingChildren.Dequeue();
+            parent = root;
+            nodesNeedingParents.Dequeue();
+
+            while (nodesNeedingParents.Any())
+            {
+                node = nodesNeedingParents.Dequeue();
+                if (node.val != int.MinValue)
+                    parent.left = node;
+
+                if (!nodesNeedingParents.Any())
+                    break;
+
+                node = nodesNeedingParents.Dequeue();
+                if (node.val != int.MinValue)
+                    parent.right = node;
+
+                if (!nodesNeedingChildren.Any())
+                    break;
+
+                parent = nodesNeedingChildren.Dequeue();    
+            }
+
+            return root;
         }
     }
 }
