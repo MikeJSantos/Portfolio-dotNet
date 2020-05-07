@@ -1,31 +1,7 @@
-using System;
-
 namespace LeetCode
 {
     public partial class Solution
     {
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-            public TreeNode(int x) { val = x; }
-
-            public TreeNode(int x, TreeNode leftNode, TreeNode rightNode)
-            {
-                val   = x;
-                left  = leftNode;
-                right = rightNode;
-            }
-
-            public TreeNode(int x, int leftValue, int rightValue)
-            {
-                val   = x;
-                left  = new TreeNode(leftValue);
-                right = new TreeNode(rightValue);
-            }
-        }
-
         public int DiameterOfBinaryTree(TreeNode root)
         {
             if (root == null) return 0;
