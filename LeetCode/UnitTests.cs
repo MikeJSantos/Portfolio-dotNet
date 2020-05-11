@@ -366,7 +366,40 @@ namespace LeetCode
                 new int[] {2, 4}
             };
             Assert.Equal(-1, s.FindJudge(4, trust));
+        }
 
+        [Fact]
+        public void FloodFillTest()
+        {
+            var s = new Solution();
+            int[][] image, retVal;
+            int sr, sc, newColor;
+
+            image = new int[][] {
+                new int[] {1,1,1},
+                new int[] {1,1,0}, 
+                new int[] {1,0,1}
+            };
+            sr = 1;
+            sc = 1;
+            newColor = 2;
+
+            retVal = new int[][] {
+                new int[] {2,2,2},
+                new int[] {2,2,0},
+                new int[] {2,0,1}
+            };
+
+            Assert.Equal(retVal, s.FloodFill(image, sr, sc, newColor));
+
+            image = new int[][] {
+                new int[] {0,0,0},
+                new int[] {0,1,1}, 
+            };
+            sr = 1;
+            sc = 1;
+            newColor = 1;
+            Assert.Equal(image, s.FloodFill(image, sr, sc, newColor));
         }
     }
 }
