@@ -71,5 +71,10 @@ namespace LeetCode
 
             return comparisonNode == null;
         }
+
+        public override int GetHashCode()
+        {
+            return val * base.GetHashCode();
+        }
     }
 }
