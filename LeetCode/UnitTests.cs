@@ -272,5 +272,101 @@ namespace LeetCode
             };
             Assert.False(s.CheckStraightLine(coordinates));
         }
+
+        [Fact]
+        public void AddTwoNumbersTest()
+        {
+            var s = new Solution();
+            ListNode l1, l2, expected;
+
+            // l1       = ListNode.Build(new int[] { 2, 4, 3 });
+            // l2       = ListNode.Build(new int[] { 5, 6, 4 });
+            // expected = ListNode.Build(new int[] { 7, 0, 8 });
+            // Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            // l1       = ListNode.Build(new int[] { 0 });
+            // l2       = ListNode.Build(new int[] { 0 });
+            // expected = ListNode.Build(new int[] { 0 });
+            // Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            // l1       = ListNode.Build(new int[] { 0 });
+            // l2       = ListNode.Build(new int[] { 1 });
+            // expected = ListNode.Build(new int[] { 1 });
+            // Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            // l1       = ListNode.Build(new int[] { 5 });
+            // l2       = ListNode.Build(new int[] { 5 });
+            // expected = ListNode.Build(new int[] { 0, 1 });
+            // Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            // l1       = ListNode.Build(new int[] { 9 });
+            // l2       = ListNode.Build(new int[] { 1, 9, 9, 9, 9, 9, 9, 9, 9, 9 });
+            // expected = ListNode.Build(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            // Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            l1       = ListNode.Build(new int[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            l2       = ListNode.Build(new int[] { 5, 6, 4 });
+            expected = ListNode.Build(new int[] { 6, 2, 4, 4, 8, 2, 0, 4, 2, 4, 8, 6, 4, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+        }
+
+        [Fact]
+        public void FindJudgeTest()
+        {
+            var s = new Solution();
+            int[][] trust;
+
+            trust = new int[][] {
+                new int[] {1, 2}
+            };
+            Assert.Equal(2, s.FindJudge(2, trust));
+
+            trust = new int[][] {
+                new int[] {1, 3},
+                new int[] {2, 3},
+            };
+            Assert.Equal(3, s.FindJudge(3, trust));
+
+            trust = new int[][] {
+                new int[] {1, 3},
+                new int[] {2, 3},
+                new int[] {3, 1},
+            };
+            Assert.Equal(-1, s.FindJudge(3, trust));
+
+            trust = new int[][] {
+                new int[] {1, 2},
+                new int[] {2, 3},
+            };
+            Assert.Equal(-1, s.FindJudge(3, trust));
+
+            trust = new int[][] {
+                new int[] {1, 3},
+                new int[] {1, 4},
+                new int[] {2, 3},
+                new int[] {2, 4},
+                new int[] {4, 3}
+            };
+            Assert.Equal(3, s.FindJudge(4, trust));
+
+            trust = new int[][] { };
+            Assert.Equal(1, s.FindJudge(1, trust));
+
+            trust = new int[][] {
+                new int[] {1, 2},
+                new int[] {3, 2},
+                new int[] {1, 3},
+                new int[] {4, 1},
+                new int[] {3, 1},
+                new int[] {2, 1},
+                new int[] {2, 3},
+                new int[] {4, 3},
+                new int[] {4, 2},
+                new int[] {3, 4},
+                new int[] {2, 4}
+            };
+            Assert.Equal(-1, s.FindJudge(4, trust));
+
+        }
     }
 }
