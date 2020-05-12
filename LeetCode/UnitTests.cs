@@ -306,7 +306,7 @@ namespace LeetCode
 
             l1       = ListNode.Build(new int[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
             l2       = ListNode.Build(new int[] { 5, 6, 4 });
-            expected = ListNode.Build(new int[] { 6, 2, 4, 4, 8, 2, 0, 4, 2, 4, 8, 6, 4, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            expected = ListNode.Build(new int[] { 6, 6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
             Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
         }
 
@@ -400,6 +400,28 @@ namespace LeetCode
             sc = 1;
             newColor = 1;
             Assert.Equal(image, s.FloodFill(image, sr, sc, newColor));
+        }
+
+        [Fact]
+        public void IsPerfectSquareTest()
+        {
+            var s = new Solution();
+
+            Assert.True(s.IsPerfectSquare(16));
+            Assert.False(s.IsPerfectSquare(2147483647));
+        }
+
+        [Fact]
+        public void SingleNonDuplicateTest()
+        {
+            var s = new Solution();
+            int[] nums;
+
+            nums = new int[] { 1, 1, 2, 3, 3, 4, 4, 8, 8 };
+            Assert.Equal(2, s.SingleNonDuplicate(nums));
+
+            nums = new int[] { 3, 3, 7, 7, 10, 11, 11 };
+            Assert.Equal(10, s.SingleNonDuplicate(nums));
         }
     }
 }
