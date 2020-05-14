@@ -1,3 +1,5 @@
+using System;
+
 namespace LeetCode
 {
     public partial class Solution
@@ -7,16 +9,25 @@ namespace LeetCode
         {
             if (num < 1) return false;
 
-            for (var i = 1; i < int.MaxValue; i++)
+            long currentGuess = num / 2;
+
+            while (true)
             {
-                var squared = i * i;
+                long square = currentGuess * currentGuess;
 
-                if (squared == num) return true;
+                if (square == num)
+                    return true;
+    
+                long lowerBound = currentGuess / 2;
+                long upperBound = Convert.ToInt64(currentGuess * 1.5);
 
-                if (squared > num) return false;
+                if (square > num)
+                    currentGuess = lowerBound;
+                else if (square < num)
+                    currentGuess = upperBound;
+                else if (upperBound == lowerBound)
+                    return lowerBound * lowerBound == num;
             }
-
-            return false;
         }
     }
 }
