@@ -305,8 +305,8 @@ namespace LeetCode
             // expected = ListNode.Build(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
             // Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
 
-            l1       = ListNode.Build(new int[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
-            l2       = ListNode.Build(new int[] { 5, 6, 4 });
+            l1 = ListNode.Build(new int[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            l2 = ListNode.Build(new int[] { 5, 6, 4 });
             expected = ListNode.Build(new int[] { 6, 6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
             Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
         }
@@ -378,7 +378,7 @@ namespace LeetCode
 
             image = new int[][] {
                 new int[] {1,1,1},
-                new int[] {1,1,0}, 
+                new int[] {1,1,0},
                 new int[] {1,0,1}
             };
             sr = 1;
@@ -395,7 +395,7 @@ namespace LeetCode
 
             image = new int[][] {
                 new int[] {0,0,0},
-                new int[] {0,1,1}, 
+                new int[] {0,1,1},
             };
             sr = 1;
             sc = 1;
@@ -489,10 +489,32 @@ namespace LeetCode
             Assert.True(trie.Search(word1));
             Assert.False(trie.Search(word2));
             Assert.True(trie.StartsWith(word2));
-            
+
             trie.Insert(word2);
-            
+
             Assert.True(trie.Search(word2));
+        }
+
+        [Fact]
+        public void MaxSubarraySumCircularTest()
+        {
+            var s = new Solution();
+            int[] A;
+
+            A = new int[] { 1, -2, 3, -2 };
+            Assert.Equal(3, s.MaxSubarraySumCircular(A));
+
+            A = new int[] { 5, -3, 5 };
+            Assert.Equal(10, s.MaxSubarraySumCircular(A));
+
+            A = new int[] { 3, -1, 2, -1 };
+            Assert.Equal(4, s.MaxSubarraySumCircular(A));
+
+            A = new int[] { 3, -2, 2, -3 };
+            Assert.Equal(3, s.MaxSubarraySumCircular(A));
+
+            A = new int[] { -2, -3, -1 };
+            Assert.Equal(-1, s.MaxSubarraySumCircular(A));
         }
     }
 }
