@@ -1,6 +1,6 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
@@ -39,6 +39,22 @@ namespace LeetCode
             // return first instance of unique char
             var minIndex = uniqueChars.Values.Min();
             return minIndex;
+        }
+    }
+    
+    public partial class UnitTests
+    {
+        [Fact]
+        public void FirstUniqCharacterTest()
+        {
+            var s = new Solution();
+            string str;
+
+            str = "leetcode";
+            Assert.Equal(0, s.FirstUniqChar(str));
+
+            str = "loveleetcode";
+            Assert.Equal(2, s.FirstUniqChar(str));
         }
     }
 }

@@ -20,19 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void FirstUniqCharacterTest()
-        {
-            var s = new Solution();
-            string str;
-
-            str = "leetcode";
-            Assert.Equal(0, s.FirstUniqChar(str));
-
-            str = "loveleetcode";
-            Assert.Equal(2, s.FirstUniqChar(str));
-        }
-
-        [Fact]
         public void NumJewelsInStonesTest()
         {
             var s = new Solution();
