@@ -20,27 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void DiameterOfBinaryTreeTest()
-        {
-            var s = new Solution();
-            TreeNode head;
-
-            var leftNode = new TreeNode(2, 4, 5);
-            head = new TreeNode(1, leftNode, new TreeNode(3));
-            Assert.Equal(3, s.DiameterOfBinaryTree(head));
-
-            head = new TreeNode(1);
-            Assert.Equal(0, s.DiameterOfBinaryTree(head));
-
-            head = new TreeNode(1, new TreeNode(2), null);
-            Assert.Equal(1, s.DiameterOfBinaryTree(head));
-
-            // 102/106 test cases passed
-            head = TreeNode.Build(new int?[] {4,-7,-3,null,null,-9,-3,9,-7,-4,null,6,null,-6,-6,null,null,0,6,5,null,9,null,null,-1,-4,null,null,null,-2});
-            Assert.Equal(8, s.DiameterOfBinaryTree(head));
-        }
-
-        [Fact]
         public void FirstUniqCharacterTest()
         {
             var s = new Solution();
