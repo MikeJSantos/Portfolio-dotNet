@@ -19,28 +19,7 @@ namespace LeetCode
             }
         }
 
-        [Fact]
-        public void MaxProfitTest()
-        {
-            var s = new Solution();
-            int[] intArray;
 
-            intArray = new int[] { 7, 1, 5, 3, 6, 4 }; // 7
-            Assert.Equal(7, s.MaxProfit(intArray));
-
-            intArray = new int[] { 1, 2, 3, 4, 5 }; // 4
-            Assert.Equal(4, s.MaxProfit(intArray));
-
-            intArray = new int[] { 7, 6, 4, 3, 1 }; // 0
-            Assert.Equal(0, s.MaxProfit(intArray));
-
-            intArray = new int[] { 1, 2 }; // 1
-            Assert.Equal(1, s.MaxProfit(intArray));
-
-            intArray = new int[] { 2, 1, 4, 5, 2, 9, 7 }; // 11
-            Assert.Equal(11, s.MaxProfit(intArray));
-            // TODO: Fix this!
-        }
 
         [Fact]
         public void MiddleNodeTest()

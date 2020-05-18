@@ -1,6 +1,5 @@
 using System;
-using System.Linq;
-using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
@@ -60,6 +59,38 @@ namespace LeetCode
 
             Console.Out.WriteLine($"Total Profit: {totalProfit}");
             return totalProfit;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void MaxProfitTest()
+        {
+            var s = new Solution();
+            int[] intArray;
+            int expected;
+
+            intArray = new int[] { 7, 1, 5, 3, 6, 4 };
+            expected = 7;
+            Assert.Equal(expected, s.MaxProfit(intArray));
+
+            intArray = new int[] { 1, 2, 3, 4, 5 };
+            expected = 4;
+            Assert.Equal(expected, s.MaxProfit(intArray));
+
+            intArray = new int[] { 7, 6, 4, 3, 1 };
+            expected = 0;
+            Assert.Equal(expected, s.MaxProfit(intArray));
+
+            intArray = new int[] { 1, 2 };
+            expected = 1;
+            Assert.Equal(1, s.MaxProfit(intArray));
+
+            // TODO: Failed test case
+            intArray = new int[] { 2, 1, 4, 5, 2, 9, 7 };
+            expected = 11;
+            Assert.Equal(expected, s.MaxProfit(intArray));
         }
     }
 }
