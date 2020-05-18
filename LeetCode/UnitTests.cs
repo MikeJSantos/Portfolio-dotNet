@@ -20,29 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void CanConstructTest()
-        {
-            var s = new Solution();
-            string ransomNote, magazine;
-
-            ransomNote = "give me the money";
-            magazine = "given all the memes that make money";
-            Assert.True(s.CanConstruct(ransomNote, magazine));
-
-            ransomNote = "a";
-            magazine = "b";
-            Assert.False(s.CanConstruct(ransomNote, magazine));
-
-            ransomNote = "aa";
-            magazine = "ab";
-            Assert.False(s.CanConstruct(ransomNote, magazine));
-
-            ransomNote = "aa";
-            magazine = "aab";
-            Assert.True(s.CanConstruct(ransomNote, magazine));
-        }
-
-        [Fact]
         public void FindComplementTest()
         {
             var s = new Solution();
