@@ -7,7 +7,11 @@ namespace LeetCode
     {
         public int val;
         public ListNode next;
-        public ListNode(int x) { val = x; }
+        
+        public ListNode(int x, ListNode n = null) {
+            val = x;
+            next = n;
+        }
 
         public static ListNode Build(int[] intArray)
         {
