@@ -1,6 +1,6 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
@@ -41,6 +41,19 @@ namespace LeetCode
             }
 
             return new String(characterStack.ToArray());            
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void BackspaceCompareTest()
+        {
+            var s = new Solution();
+            Assert.True(s.BackspaceCompare("ab#c", "ad#c")); // true, "ac"
+            Assert.True(s.BackspaceCompare("ab##", "c#d#")); // true, ""
+            Assert.True(s.BackspaceCompare("a##c", "#a#c")); // true, "c"
+            Assert.False(s.BackspaceCompare("a#c", "b"));    // false, "c" > "b"
         }
     }
 }

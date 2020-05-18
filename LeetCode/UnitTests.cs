@@ -20,16 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void BackspaceCompareTest()
-        {
-            var s = new Solution();
-            Assert.True(s.BackspaceCompare("ab#c", "ad#c")); // true, "ac"
-            Assert.True(s.BackspaceCompare("ab##", "c#d#")); // true, ""
-            Assert.True(s.BackspaceCompare("a##c", "#a#c")); // true, "c"
-            Assert.False(s.BackspaceCompare("a#c", "b"));    // false, "c" > "b"
-        }
-
-        [Fact]
         public void StringShiftTest()
         {
             var s = new Solution();
