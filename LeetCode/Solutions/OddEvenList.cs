@@ -2,6 +2,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
+        // TODO: Optimize. Runtime beats 59.03% of submissions (100 ms)
         public ListNode OddEvenList(ListNode head)
         {
             if (head == null || head.next == null)
@@ -17,7 +18,7 @@ namespace LeetCode
                 if (lastOddNode == null)
                     lastOddNode = currentNode;
                     
-                if (isCurrentNodeOdd && lastOddNode.val != currentNode.val)
+                if (isCurrentNodeOdd && lastOddNode != currentNode)
                 {
                     var newNode = new ListNode(currentNode.val, lastOddNode.next);
 
