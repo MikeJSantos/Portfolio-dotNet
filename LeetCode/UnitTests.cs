@@ -19,19 +19,7 @@ namespace LeetCode
             }
         }
 
-        [Fact]
-        public void MinStackTest()
-        {
-            var minStack = new MinStack();
-            minStack.Push(-2);
-            minStack.Push(0);
-            minStack.Push(-3);
-            Assert.Equal(-3, minStack.GetMin());
 
-            minStack.Pop();
-            Assert.Equal(0, minStack.Top());
-            Assert.Equal(-2, minStack.GetMin());
-        }
 
         [Fact]
         public void LastStoneWeightTest()
