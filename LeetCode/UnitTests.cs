@@ -1,11 +1,24 @@
-using System.IO;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Xunit;
 
 namespace LeetCode
 {
     public class UnitTests
     {
+        private string ReadTestDataFromFile(string fileName)
+        {
+            var basePath = @"C:\Projects\Portfolio-dotNet\LeetCode\TestData";
+
+            var path = Path.Combine(basePath, fileName);
+            using (var sr = new StreamReader(path))
+            {
+                return sr.ReadToEnd();
+            }
+        }
+        
         [Fact]
         public void CountElementsTest()
         {
@@ -459,22 +472,9 @@ namespace LeetCode
             Assert.Equal(output, s.RemoveKdigits(num, k));
 
             // 10,001 > 8899
-
-            var basePath = @"C:\Projects\Portfolio-dotNet\LeetCode";
-            var path = Path.Combine(basePath, @"TestData\RemoveKdigits_input.txt");
-            using (var sr = new StreamReader(path))
-            {
-                num = sr.ReadToEnd();
-            }
-
+            num = ReadTestDataFromFile("RemoveKdigits_input.txt");
             k = 1000;
-
-            path = Path.Combine(basePath, @"TestData\RemoveKdigits_output.txt");
-            using (var sr = new StreamReader(path))
-            {
-                output = sr.ReadToEnd();
-            }
-
+            output = ReadTestDataFromFile("RemoveKdigits_output.txt");
             Assert.Equal(output, s.RemoveKdigits(num, k));
         }
 
@@ -532,19 +532,27 @@ namespace LeetCode
             expected = ListNode.Build(new int[] { 2, 3, 6, 7, 1, 5, 4 });
             Assert.Equal(expected, s.OddEvenList(input));
 
-            // 1 2 3
-            // 1[3]2
+            input = ListNode.Build(new int[] { 1, 2, 3, 4 });
+            expected = ListNode.Build(new int[] { 1, 3, 2, 4 });
+            Assert.Equal(expected, s.OddEvenList(input));
 
-            // 1 2 3 4
-            // 1[3]2 4
+            input = ListNode.Build(new int[] { 1, 2, 3, 4, 5, 6 });
+            expected = ListNode.Build(new int[] { 1, 3, 5, 2, 4, 6 });
+            Assert.Equal(expected, s.OddEvenList(input));
 
-            // 1 2 3 4 5
-            // 1[3]2 4 5
-            // 1 3[5]2 4
+            // Test Case 70/71
+            var convertedArray = ReadTestDataFromFile("OddEvenList_input.txt")
+                .Split(',')
+                .Select(n => Convert.ToInt32(n))
+                .ToArray();
+            input = ListNode.Build(convertedArray);
 
-            // 1 2 3 4 5 6
-            // 1[3]2 4 5 6
-            // 1 3[5]2 4 6
+            convertedArray = ReadTestDataFromFile("OddEvenList_output.txt")
+                .Split(',')
+                .Select(n => Convert.ToInt32(n))
+                .ToArray();
+            expected = ListNode.Build(convertedArray);
+            Assert.Equal(expected, s.OddEvenList(input));
         }
         
         [Fact]
