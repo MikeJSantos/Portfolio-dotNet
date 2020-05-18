@@ -20,15 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void FindComplementTest()
-        {
-            var s = new Solution();
-
-            Assert.Equal(2, s.FindComplement(5));
-            Assert.Equal(0, s.FindComplement(1));
-        }
-
-        [Fact]
         public void FirstBadVersionTest()
         {
             var s = new Solution();

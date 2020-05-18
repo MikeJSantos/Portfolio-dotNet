@@ -1,4 +1,5 @@
 using System;
+using Xunit;
 
 namespace LeetCode
 {
@@ -16,6 +17,18 @@ namespace LeetCode
             }
 
             return Convert.ToInt32(new string(binaryArray), 2);
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void FindComplementTest()
+        {
+            var s = new Solution();
+
+            Assert.Equal(2, s.FindComplement(5));
+            Assert.Equal(0, s.FindComplement(1));
         }
     }
 }
