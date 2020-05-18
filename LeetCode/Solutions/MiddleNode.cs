@@ -1,4 +1,5 @@
 using System;
+using Xunit;
 
 namespace LeetCode
 {
@@ -29,6 +30,22 @@ namespace LeetCode
 
             // Console.Out.WriteLine($"<[{iter.Item1.val}], {iter.Item2}>, {nodeCount}");
             return tuple;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void MiddleNodeTest()
+        {
+            var s = new Solution();
+            ListNode node;
+
+            node = ListNode.Build(new int[] { 1, 2, 3, 4, 5 });
+            Assert.Equal(3, s.MiddleNode(node).val);
+
+            node = ListNode.Build(new int[] { 1, 2, 3, 4, 5, 6 });
+            Assert.Equal(4, s.MiddleNode(node).val);
         }
     }
 }
