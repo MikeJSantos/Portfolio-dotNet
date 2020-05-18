@@ -20,21 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void NumJewelsInStonesTest()
-        {
-            var s = new Solution();
-            string J, S;
-
-            J = "aA";
-            S = "aAAbbbb";
-            Assert.Equal(3, s.NumJewelsInStones(J, S));
-
-            J = "z";
-            S = "ZZ";
-            Assert.Equal(0, s.NumJewelsInStones(J, S));
-        }
-
-        [Fact]
         public void CanConstructTest()
         {
             var s = new Solution();

@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
@@ -17,6 +17,24 @@ namespace LeetCode
             }
 
             return jewelCount;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void NumJewelsInStonesTest()
+        {
+            var s = new Solution();
+            string J, S;
+
+            J = "aA";
+            S = "aAAbbbb";
+            Assert.Equal(3, s.NumJewelsInStones(J, S));
+
+            J = "z";
+            S = "ZZ";
+            Assert.Equal(0, s.NumJewelsInStones(J, S));
         }
     }
 }
