@@ -6,7 +6,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    public class UnitTests
+    public partial class UnitTests
     {
         private string ReadTestDataFromFile(string fileName)
         {
@@ -414,14 +414,7 @@ namespace LeetCode
             Assert.Equal(image, s.FloodFill(image, sr, sc, newColor));
         }
 
-        [Fact]
-        public void IsPerfectSquareTest()
-        {
-            var s = new Solution();
 
-            Assert.True(s.IsPerfectSquare(16));
-            Assert.False(s.IsPerfectSquare(2147483647));
-        }
 
         [Fact]
         public void SingleNonDuplicateTest()
