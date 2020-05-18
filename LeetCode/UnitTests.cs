@@ -516,5 +516,34 @@ namespace LeetCode
             A = new int[] { -2, -3, -1 };
             Assert.Equal(-1, s.MaxSubarraySumCircular(A));
         }
+
+        [Fact]
+        public void OddEvenListTest()
+        {
+            var s = new Solution();
+            ListNode input, expected;
+
+            input = ListNode.Build(new int[] { 1, 2, 3, 4, 5 });
+            expected = ListNode.Build(new int[] { 1, 3, 5, 2, 4 });
+            Assert.Equal(expected, s.OddEvenList(input));
+
+            input = ListNode.Build(new int[] { 2, 1, 3, 5, 6, 4, 7 });
+            expected = ListNode.Build(new int[] { 2, 3, 6, 7, 1, 5, 4 });
+            Assert.Equal(expected, s.OddEvenList(input));
+
+            // 1 2 3
+            // 1[3]2
+
+            // 1 2 3 4
+            // 1[3]2 4
+
+            // 1 2 3 4 5
+            // 1[3]2 4 5
+            // 1 3[5]2 4
+
+            // 1 2 3 4 5 6
+            // 1[3]2 4 5 6
+            // 1 3[5]2 4 6
+        }
     }
 }
