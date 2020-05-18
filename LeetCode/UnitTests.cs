@@ -20,30 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void IsCousinsTest()
-        {
-            var s = new Solution();
-            TreeNode root;
-            int?[] array;
-
-            array = new int?[] { 1, 2, 3, 4 };
-            root = TreeNode.Build(array);
-            Assert.False(s.IsCousins(root, 4, 3));
-
-            array = new int?[] { 1, 2, 3, null, 4, null, 5 };
-            root = TreeNode.Build(array);
-            Assert.True(s.IsCousins(root, 5, 4));
-
-            array = new int?[] { 1, 2, 3, null, 4 };
-            root = TreeNode.Build(array);
-            Assert.False(s.IsCousins(root, 2, 3));
-
-            array = new int?[] { 1, 2, 3, null, null, null, 4, 5 };
-            root = TreeNode.Build(array);
-            Assert.False(s.IsCousins(root, 1, 2));
-        }
-
-        [Fact]
         public void CheckStraightLineTest()
         {
             var s = new Solution();
