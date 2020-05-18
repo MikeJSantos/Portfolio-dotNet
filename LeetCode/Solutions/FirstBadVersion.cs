@@ -1,6 +1,4 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
+using Xunit;
 
 /* The isBadVersion API is defined in the parent class VersionControl.
       bool IsBadVersion(int version); */
@@ -39,6 +37,19 @@ namespace LeetCode
         private bool IsBadVersion(int version)
         {
             return version >= 1150769282;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void FirstBadVersionTest()
+        {
+            var s = new Solution();
+
+            Assert.Equal(4, s.FirstBadVersion(5));
+            Assert.Equal(3, s.FirstBadVersion(4));
+            Assert.Equal(1150769282, s.FirstBadVersion(1420736637));
         }
     }
 }

@@ -20,16 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void FirstBadVersionTest()
-        {
-            var s = new Solution();
-
-            // Assert.Equal(4, s.FirstBadVersion(5));
-            // Assert.Equal(3, s.FirstBadVersion(4));
-            Assert.Equal(1150769282, s.FirstBadVersion(1420736637));
-        }
-
-        [Fact]
         public void MajorityElementTest()
         {
             var s = new Solution();
