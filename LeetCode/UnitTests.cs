@@ -18,25 +18,6 @@ namespace LeetCode
                 return sr.ReadToEnd();
             }
         }
-        
-        [Fact]
-        public void CountElementsTest()
-        {
-            var s = new Solution();
-            int[] arr;
-
-            arr = new int[] { 1, 2, 3 }; // 2
-            Assert.Equal(2, s.CountElements(arr));
-
-            arr = new int[] { 1, 1, 3, 3, 5, 5, 7, 7 }; // 0
-            Assert.Equal(0, s.CountElements(arr));
-
-            arr = new int[] { 1, 3, 2, 3, 5, 0 }; // 3
-            Assert.Equal(3, s.CountElements(arr));
-
-            arr = new int[] { 1, 1, 1, 1, 2, 2 }; // 4
-            Assert.Equal(4, s.CountElements(arr));
-        }
 
         [Fact]
         public void MaxProfitTest()
