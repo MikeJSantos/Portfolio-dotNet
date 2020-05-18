@@ -20,22 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void MajorityElementTest()
-        {
-            var s = new Solution();
-            int[] array;
-
-            array = new int[] { 3, 2, 3 };
-            Assert.Equal(3, s.MajorityElement(array));
-
-            array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
-            Assert.Equal(2, s.MajorityElement(array));
-
-            array = new int[] { 6, 5, 5 };
-            Assert.Equal(5, s.MajorityElement(array));
-        }
-
-        [Fact]
         public void IsCousinsTest()
         {
             var s = new Solution();
