@@ -20,22 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void StringShiftTest()
-        {
-            var s = new Solution();
-            string inputStr;
-            int[][] shift;
-
-            inputStr = "abc";
-            shift = new int[][] { new int[] { 0, 1 }, new int[] { 1, 2 } };
-            Assert.Equal("cab", s.StringShift(inputStr, shift));
-
-            inputStr = "abcdefg";
-            shift = new int[][] { new int[] { 1, 1 }, new int[] { 1, 1 }, new int[] { 0, 2 }, new int[] { 1, 3 } };
-            Assert.Equal("efgabcd", s.StringShift(inputStr, shift));
-        }
-
-        [Fact]
         public void DiameterOfBinaryTreeTest()
         {
             var s = new Solution();
