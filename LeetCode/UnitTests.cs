@@ -19,21 +19,6 @@ namespace LeetCode
             }
         }
 
-
-
-        [Fact]
-        public void LastStoneWeightTest()
-        {
-            var s = new Solution();
-            int[] stones;
-
-            stones = new int[] { 2, 7, 4, 1, 8, 1 };
-            Assert.Equal(1, s.LastStoneWeight(stones));
-
-            stones = new int[] { 7, 6, 7, 6, 9 };
-            Assert.Equal(3, s.LastStoneWeight(stones));
-        }
-
         [Fact]
         public void BackspaceCompareTest()
         {
