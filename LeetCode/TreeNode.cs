@@ -29,7 +29,7 @@ namespace LeetCode
             return val.ToString();
         }
 
-        public static TreeNode Build(int?[] array)
+        public static TreeNode Build(params int?[] array)
         {
             if (array == null || array.Length == 0 || !array[0].HasValue)
                 return null;
