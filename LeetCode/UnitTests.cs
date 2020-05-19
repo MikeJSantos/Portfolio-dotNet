@@ -51,29 +51,11 @@ namespace LeetCode
             output = num;
             Assert.Equal(output, s.RemoveKdigits(num, k));
 
-            // 10,001 > 8899
+            // TODO: Failed test case. Length 10,001 > 8899
             num = ReadTestDataFromFile("RemoveKdigits_input.txt");
             k = 1000;
             output = ReadTestDataFromFile("RemoveKdigits_output.txt");
             Assert.Equal(output, s.RemoveKdigits(num, k));
-        }
-
-        [Fact]
-        public void TrieTest()
-        {
-            var trie = new Trie();
-
-            string word1 = "apple", word2 = "app";
-
-            trie.Insert(word1);
-
-            Assert.True(trie.Search(word1));
-            Assert.False(trie.Search(word2));
-            Assert.True(trie.StartsWith(word2));
-
-            trie.Insert(word2);
-
-            Assert.True(trie.Search(word2));
         }
 
         [Fact]
