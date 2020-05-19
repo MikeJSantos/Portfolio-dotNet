@@ -20,33 +20,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void CheckStraightLineTest()
-        {
-            var s = new Solution();
-            int[][] coordinates;
-
-            coordinates = new int[][] {
-                new int[] {1,2},
-                new int[] {2,3},
-                new int[] {3,4},
-                new int[] {4,5},
-                new int[] {5,6},
-                new int[] {6,7}
-            };
-            Assert.True(s.CheckStraightLine(coordinates));
-
-            coordinates = new int[][] {
-                new int[] {1,1},
-                new int[] {2,2},
-                new int[] {3,4},
-                new int[] {4,5},
-                new int[] {5,6},
-                new int[] {7,7}
-            };
-            Assert.False(s.CheckStraightLine(coordinates));
-        }
-
-        [Fact]
         public void AddTwoNumbersTest()
         {
             var s = new Solution();
