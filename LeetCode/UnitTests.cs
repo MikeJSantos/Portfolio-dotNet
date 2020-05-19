@@ -59,28 +59,6 @@ namespace LeetCode
         }
 
         [Fact]
-        public void MaxSubarraySumCircularTest()
-        {
-            var s = new Solution();
-            int[] A;
-
-            A = new int[] { 1, -2, 3, -2 };
-            Assert.Equal(3, s.MaxSubarraySumCircular(A));
-
-            A = new int[] { 5, -3, 5 };
-            Assert.Equal(10, s.MaxSubarraySumCircular(A));
-
-            A = new int[] { 3, -1, 2, -1 };
-            Assert.Equal(4, s.MaxSubarraySumCircular(A));
-
-            A = new int[] { 3, -2, 2, -3 };
-            Assert.Equal(3, s.MaxSubarraySumCircular(A));
-
-            A = new int[] { -2, -3, -1 };
-            Assert.Equal(-1, s.MaxSubarraySumCircular(A));
-        }
-
-        [Fact]
         public void OddEvenListTest()
         {
             var s = new Solution();
