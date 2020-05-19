@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
@@ -71,6 +72,27 @@ namespace LeetCode
             }
 
             return startIndices;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void FindAnagramsTest()
+        {
+            var s = new Solution();
+            string str, p;
+            IList<int> expected;
+
+            str = "cbaebabacd";
+            p = "abc";
+            expected = new List<int>() { 0, 6 };
+            Assert.Equal(expected, s.FindAnagrams(str,p));
+
+            str = "abab";
+            p = "ab";
+            expected = new List<int>() { 0, 1, 2 };
+            Assert.Equal(expected, s.FindAnagrams(str,p));
         }
     }
 }
