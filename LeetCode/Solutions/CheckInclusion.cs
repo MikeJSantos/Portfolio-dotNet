@@ -1,6 +1,6 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
@@ -47,6 +47,32 @@ namespace LeetCode
             }
 
             return false;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void CheckInclusionTest()
+        {
+            var s = new Solution();
+            string s1, s2;
+
+            s1 = "ab";
+            s2 = "eidbaooo";
+            Assert.True(s.CheckInclusion(s1, s2));
+
+            s1 = "ab";
+            s2 = "eidboaoo";
+            Assert.False(s.CheckInclusion(s1, s2));
+
+            s1 = "adc";
+            s2 = "dcda";
+            Assert.True(s.CheckInclusion(s1, s2));
+
+            s1 = "hello";
+            s2 = "ooolleoooleh";
+            Assert.False(s.CheckInclusion(s1, s2));
         }
     }
 }
