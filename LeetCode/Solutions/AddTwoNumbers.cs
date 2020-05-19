@@ -1,5 +1,4 @@
-using System;
-using System.Text;
+using Xunit;
 
 namespace LeetCode
 {
@@ -53,6 +52,46 @@ namespace LeetCode
             }
 
             return retVal;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void AddTwoNumbersTest()
+        {
+            var s = new Solution();
+            ListNode l1, l2, expected;
+
+            l1       = ListNode.Build(new int[] { 2, 4, 3 });
+            l2       = ListNode.Build(new int[] { 5, 6, 4 });
+            expected = ListNode.Build(new int[] { 7, 0, 8 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            l1       = ListNode.Build(new int[] { 0 });
+            l2       = ListNode.Build(new int[] { 0 });
+            expected = ListNode.Build(new int[] { 0 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            l1       = ListNode.Build(new int[] { 0 });
+            l2       = ListNode.Build(new int[] { 1 });
+            expected = ListNode.Build(new int[] { 1 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            l1       = ListNode.Build(new int[] { 5 });
+            l2       = ListNode.Build(new int[] { 5 });
+            expected = ListNode.Build(new int[] { 0, 1 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            l1       = ListNode.Build(new int[] { 9 });
+            l2       = ListNode.Build(new int[] { 1, 9, 9, 9, 9, 9, 9, 9, 9, 9 });
+            expected = ListNode.Build(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
+
+            l1       = ListNode.Build(new int[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            l2       = ListNode.Build(new int[] { 5, 6, 4 });
+            expected = ListNode.Build(new int[] { 6, 6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 });
+            Assert.Equal(expected, s.AddTwoNumbers(l1, l2));
         }
     }
 }
