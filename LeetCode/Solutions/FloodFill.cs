@@ -1,4 +1,4 @@
-using System;
+using Xunit;
 
 namespace LeetCode
 {
@@ -41,6 +41,43 @@ namespace LeetCode
         private bool FloodFill_IsColorValid(int color)
         {
             return color >= 0 && color <= 65535;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void FloodFillTest()
+        {
+            var s = new Solution();
+            int[][] image, retVal;
+            int sr, sc, newColor;
+
+            image = new int[][] {
+                new int[] {1,1,1},
+                new int[] {1,1,0},
+                new int[] {1,0,1}
+            };
+            sr = 1;
+            sc = 1;
+            newColor = 2;
+
+            retVal = new int[][] {
+                new int[] {2,2,2},
+                new int[] {2,2,0},
+                new int[] {2,0,1}
+            };
+
+            Assert.Equal(retVal, s.FloodFill(image, sr, sc, newColor));
+
+            image = new int[][] {
+                new int[] {0,0,0},
+                new int[] {0,1,1},
+            };
+            sr = 1;
+            sc = 1;
+            newColor = 1;
+            Assert.Equal(image, s.FloodFill(image, sr, sc, newColor));
         }
     }
 }
