@@ -41,10 +41,10 @@ namespace LeetCode
             var s = new Solution();
             ListNode node;
 
-            node = ListNode.Build(new int[] { 1, 2, 3, 4, 5 });
+            node = ListNode.Build(1, 2, 3, 4, 5);
             Assert.Equal(3, s.MiddleNode(node).val);
 
-            node = ListNode.Build(new int[] { 1, 2, 3, 4, 5, 6 });
+            node = ListNode.Build(1, 2, 3, 4, 5, 6);
             Assert.Equal(4, s.MiddleNode(node).val);
         }
     }

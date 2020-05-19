@@ -48,20 +48,20 @@ namespace LeetCode
             var s = new Solution();
             ListNode input, expected;
 
-            input = ListNode.Build(new int[] { 1, 2, 3, 4, 5 });
-            expected = ListNode.Build(new int[] { 1, 3, 5, 2, 4 });
+            input    = ListNode.Build(1, 2, 3, 4, 5);
+            expected = ListNode.Build(1, 3, 5, 2, 4);
             Assert.Equal(expected, s.OddEvenList(input));
 
-            input = ListNode.Build(new int[] { 2, 1, 3, 5, 6, 4, 7 });
-            expected = ListNode.Build(new int[] { 2, 3, 6, 7, 1, 5, 4 });
+            input    = ListNode.Build(2, 1, 3, 5, 6, 4, 7);
+            expected = ListNode.Build(2, 3, 6, 7, 1, 5, 4);
             Assert.Equal(expected, s.OddEvenList(input));
 
-            input = ListNode.Build(new int[] { 1, 2, 3, 4 });
-            expected = ListNode.Build(new int[] { 1, 3, 2, 4 });
+            input    = ListNode.Build(1, 2, 3, 4);
+            expected = ListNode.Build(1, 3, 2, 4);
             Assert.Equal(expected, s.OddEvenList(input));
 
-            input = ListNode.Build(new int[] { 1, 2, 3, 4, 5, 6 });
-            expected = ListNode.Build(new int[] { 1, 3, 5, 2, 4, 6 });
+            input    = ListNode.Build(1, 2, 3, 4, 5, 6);
+            expected = ListNode.Build(1, 3, 5, 2, 4, 6);
             Assert.Equal(expected, s.OddEvenList(input));
 
             // Test Case 70/71

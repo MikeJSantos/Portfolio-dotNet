@@ -13,7 +13,7 @@ namespace LeetCode
             next = n;
         }
 
-        public static ListNode Build(int[] intArray)
+        public static ListNode Build(params int[] intArray)
         {
             ListNode head = null; ;
             ListNode iterationNode = null;
