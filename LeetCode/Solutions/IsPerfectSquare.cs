@@ -56,11 +56,12 @@ namespace LeetCode
         {
             var s = new Solution();
 
-            // Assert.True(s.IsPerfectSquare(1));
-            // Assert.False(s.IsPerfectSquare(7));
-            // Assert.True(s.IsPerfectSquare(9));
-            // Assert.True(s.IsPerfectSquare(16));
-            // Assert.False(s.IsPerfectSquare(2147483647));
+            Assert.True(s.IsPerfectSquare(1));
+            Assert.False(s.IsPerfectSquare(7));
+            Assert.True(s.IsPerfectSquare(9));
+            Assert.True(s.IsPerfectSquare(16));
+            Assert.False(s.IsPerfectSquare(2147483647));
+            // Failed test case.
             Assert.True(s.IsPerfectSquare(808201));
         }
     }

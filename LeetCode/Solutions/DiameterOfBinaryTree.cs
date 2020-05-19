@@ -25,7 +25,7 @@ namespace LeetCode
                     nodeQueue.Enqueue(node.left);
                 if (node.right != null)
                     nodeQueue.Enqueue(node.right);
-                
+
                 var diameter = DiameterOfBinaryTreeRecurse(node, 0);
                 if (diameter > maxDiameter)
                     maxDiameter = diameter;
@@ -39,7 +39,7 @@ namespace LeetCode
             if (node == null)
                 return depth - 1; // Redundant?
 
-            var leftDepth  = node.left != null
+            var leftDepth = node.left != null
                 ? DiameterOfBinaryTreeRecurse(node.left, depth + 1)
                 : depth;
             var rightDepth = node.right != null
@@ -71,8 +71,10 @@ namespace LeetCode
             head = new TreeNode(1, new TreeNode(2), null);
             Assert.Equal(1, s.DiameterOfBinaryTree(head));
 
-            // 102/106 test cases passed
-            head = TreeNode.Build(new int?[] {4,-7,-3,null,null,-9,-3,9,-7,-4,null,6,null,-6,-6,null,null,0,6,5,null,9,null,null,-1,-4,null,null,null,-2});
+            head = TreeNode.Build(new int?[] { 
+                4, -7, -3, null, null, -9, -3, 9, -7, -4, null, 6, null, -6, -6, null, 
+                null, 0, 6, 5, null, 9, null, null, -1, -4, null, null, null, -2
+            });
             Assert.Equal(8, s.DiameterOfBinaryTree(head));
         }
     }
