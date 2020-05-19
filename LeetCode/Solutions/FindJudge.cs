@@ -1,6 +1,7 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
+using Xunit;
+
 
 namespace LeetCode
 {
@@ -47,6 +48,67 @@ namespace LeetCode
                 return -1;
 
             return trustDictionary.First(v => v.Value == maxTrust).Key;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void FindJudgeTest()
+        {
+            var s = new Solution();
+            int[][] trust;
+
+            trust = new int[][] {
+                new int[] {1, 2}
+            };
+            Assert.Equal(2, s.FindJudge(2, trust));
+
+            trust = new int[][] {
+                new int[] {1, 3},
+                new int[] {2, 3},
+            };
+            Assert.Equal(3, s.FindJudge(3, trust));
+
+            trust = new int[][] {
+                new int[] {1, 3},
+                new int[] {2, 3},
+                new int[] {3, 1},
+            };
+            Assert.Equal(-1, s.FindJudge(3, trust));
+
+            trust = new int[][] {
+                new int[] {1, 2},
+                new int[] {2, 3},
+            };
+            Assert.Equal(-1, s.FindJudge(3, trust));
+
+            trust = new int[][] {
+                new int[] {1, 3},
+                new int[] {1, 4},
+                new int[] {2, 3},
+                new int[] {2, 4},
+                new int[] {4, 3}
+            };
+            Assert.Equal(3, s.FindJudge(4, trust));
+
+            trust = new int[][] { };
+            Assert.Equal(1, s.FindJudge(1, trust));
+
+            trust = new int[][] {
+                new int[] {1, 2},
+                new int[] {3, 2},
+                new int[] {1, 3},
+                new int[] {4, 1},
+                new int[] {3, 1},
+                new int[] {2, 1},
+                new int[] {2, 3},
+                new int[] {4, 3},
+                new int[] {4, 2},
+                new int[] {3, 4},
+                new int[] {2, 4}
+            };
+            Assert.Equal(-1, s.FindJudge(4, trust));
         }
     }
 }
