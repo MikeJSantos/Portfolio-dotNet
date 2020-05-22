@@ -1,59 +1,8 @@
 using System;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
+using Xunit;
 
 namespace LeetCode
 {
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x) { val = x; }
-
-        public static ListNode Build(int[] intArray)
-        {
-            ListNode head = null;;
-            ListNode iterationNode = null;
-
-            foreach(var num in intArray)
-            {
-                var newNode = new ListNode(num);
-
-                if (head == null)
-                {
-                    head = newNode;
-                    iterationNode = newNode;
-                }
-                else
-                {
-                    iterationNode.next = newNode;
-                    iterationNode = newNode;
-                }
-            }
-
-            return head;
-        }
-
-        public static string Output(ListNode node)
-        {
-            var strBuilder = new StringBuilder();
-
-            while (node != null)
-            {
-                strBuilder.Append(node.val);
-
-                if (node.next != null)
-                    strBuilder.Append(" > ");
-
-                node = node.next;
-            }
-
-            return strBuilder.ToString();
-        }
-    }
-
     public partial class Solution
     {
         public ListNode MiddleNode(ListNode head)
@@ -81,6 +30,22 @@ namespace LeetCode
 
             // Console.Out.WriteLine($"<[{iter.Item1.val}], {iter.Item2}>, {nodeCount}");
             return tuple;
+        }
+    }
+
+    public partial class UnitTests
+    {
+        [Fact]
+        public void MiddleNodeTest()
+        {
+            var s = new Solution();
+            ListNode node;
+
+            node = ListNode.Build(1, 2, 3, 4, 5);
+            Assert.Equal(3, s.MiddleNode(node).val);
+
+            node = ListNode.Build(1, 2, 3, 4, 5, 6);
+            Assert.Equal(4, s.MiddleNode(node).val);
         }
     }
 }
