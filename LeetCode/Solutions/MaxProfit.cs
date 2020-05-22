@@ -1,63 +1,39 @@
-using System;
 using Xunit;
 
 namespace LeetCode
 {
     public partial class Solution
     {
+        // TODO: Optimize. Faster than 29.43% of submissions (https://leetcode.com/submissions/detail/342848629/)
         public int MaxProfit(int[] prices)
         {
-            if (prices.Length < 2) return 0;
-
-            Console.Out.WriteLine($"[{string.Join(",", prices)}]");
-
-            var optimalBuyDate = -1;
             var totalProfit = 0;
 
-            for (var i = 0; i < prices.Length - 1; i++)
+            if (prices.Length < 2)
+                return totalProfit;
+
+            for (var buyDate = 0; buyDate < prices.Length - 1; buyDate++)
             {
-                // Find optimal buy date, in cases where prices are falling
-                if (optimalBuyDate == -1 || prices[i] < prices[optimalBuyDate])
+                // Find the trough
+                if (buyDate + 1 < prices.Length && prices[buyDate] > prices[buyDate + 1])
+                    continue;
+
+                for (var sellDate = buyDate + 1; sellDate < prices.Length; sellDate++)
                 {
-                    optimalBuyDate = i;
-                    if (i + 1 < prices.Length - 1) continue;
-                }
-
-                var buyPrice = prices[optimalBuyDate];
-                var optimalProfitToDayRatio = 0d;
-                var optimalSellDate = -1;
-
-                for (var sellDate = i; sellDate < prices.Length; sellDate++)
-                {
-                    var sellPrice = prices[sellDate];
-
-                    // Ignore dates that don't turn a profit
-                    if (buyPrice >= sellPrice)
+                    // Find the crest
+                    if (sellDate + 1 < prices.Length && prices[sellDate] < prices[sellDate + 1])
                         continue;
 
-                    var profit = sellPrice - buyPrice;
-                    var daysOnMarket = sellDate - optimalBuyDate;
-                    var profitToDayRatio = (double)profit / daysOnMarket;
-
-                    if (optimalSellDate == -1 || profitToDayRatio >= optimalProfitToDayRatio && profit > prices[optimalSellDate] - buyPrice)
+                    var profit = prices[sellDate] - prices[buyDate];
+                    if (profit > 0)
                     {
-                        optimalProfitToDayRatio = profitToDayRatio;
-                        optimalSellDate = sellDate;
+                        totalProfit += profit;
+                        buyDate = sellDate;
                     }
-                }
 
-                if (optimalSellDate != -1)
-                {
-                    var transactionProfit = prices[optimalSellDate] - buyPrice;
-                    totalProfit += transactionProfit;
-                    Console.Out.WriteLine($"- Profit: {transactionProfit}, Buy day {optimalBuyDate} @ {prices[optimalBuyDate]}, " +
-                                          $"Sell day {optimalSellDate} @ {prices[optimalSellDate]}");
-                    optimalBuyDate = -1;
-                    i = optimalSellDate;
+                    break;
                 }
             }
-
-            Console.Out.WriteLine($"Total Profit: {totalProfit}");
             return totalProfit;
         }
     }
@@ -87,7 +63,6 @@ namespace LeetCode
             expected = 1;
             Assert.Equal(1, s.MaxProfit(intArray));
 
-            // TODO: Failed test case
             intArray = new int[] { 2, 1, 4, 5, 2, 9, 7 };
             expected = 11;
             Assert.Equal(expected, s.MaxProfit(intArray));
