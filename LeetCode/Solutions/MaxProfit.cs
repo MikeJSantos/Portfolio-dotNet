@@ -4,7 +4,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize. Faster than 29.43% of submissions (https://leetcode.com/submissions/detail/342848629/)
+        // TODO: Optimize. Beats 29.43% of submissions (https://leetcode.com/submissions/detail/342848629/)
         public int MaxProfit(int[] prices)
         {
             var totalProfit = 0;

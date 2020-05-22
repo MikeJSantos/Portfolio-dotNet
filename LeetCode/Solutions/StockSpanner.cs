@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    // TODO: Optimize. Faster than 13.40% of submissions (https://leetcode.com/submissions/detail/342775137/)
+    // TODO: Optimize. Beats 13.40% of submissions (https://leetcode.com/submissions/detail/342775137/)
     public class StockSpanner
     {
         private List<int> _prices, _spans;

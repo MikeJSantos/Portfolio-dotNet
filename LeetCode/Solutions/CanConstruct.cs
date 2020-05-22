@@ -5,7 +5,8 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize. Slower than 74% of submissions. Sort both strings, then compare chunks of the ransom note to magazine?
+        // TODO: Optimize. Submission not ranked (https://leetcode.com/submissions/detail/334875410/)
+        // Sort both strings, then compare chunks of the ransom note to magazine?
         public bool CanConstruct(string ransomNote, string magazine)
         {
             var noteDictionary = new Dictionary<char, int>();

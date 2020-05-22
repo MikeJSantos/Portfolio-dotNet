@@ -6,7 +6,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize. Runtime beats 59.03% of submissions (100 ms)
+        // TODO: Optimize? Beats 61.02% of submissions (https://leetcode.com/submissions/detail/341297655/)
         public ListNode OddEvenList(ListNode head)
         {
             if (head == null || head.next == null)

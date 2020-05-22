@@ -6,7 +6,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize? Runtime: 2248 ms Memory Usage: 26.6 MB (Avg Runtime 26 ms?!)
+        // TODO: Optimize. Submission not ranked (https://leetcode.com/submissions/detail/341229875/)
         public bool CheckInclusion(string s1, string s2)
         {
             if (s1.Length < 1 || s2.Length < 1)

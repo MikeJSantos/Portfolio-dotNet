@@ -6,7 +6,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize. Beats 42.72% of submissions
+        // TODO: Optimize. Beats 39.69% of submissions (https://leetcode.com/submissions/detail/335300805/)
         public int MajorityElement(int[] nums)
         {
             var majorityElement = 0;

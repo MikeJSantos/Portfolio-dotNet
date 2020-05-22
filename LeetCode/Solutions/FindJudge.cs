@@ -2,12 +2,11 @@ using System.Linq;
 using System.Collections.Generic;
 using Xunit;
 
-
 namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize. 836ms runtime, 300ms average
+        // TODO: Optimize. Submission not ranked (https://leetcode.com/submissions/detail/337539911/)
         public int FindJudge(int N, int[][] trust)
         {
             if (N == 1) return 1;

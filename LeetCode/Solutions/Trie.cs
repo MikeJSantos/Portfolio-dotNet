@@ -3,7 +3,7 @@ using Xunit;
 
 namespace LeetCode
 {
-    // TODO: Optimize. Runtime: 1384 ms (avg 216 ms), Memory Usage: 58.8 MB
+    // TODO: Optimize. Submission not ranked (https://leetcode.com/submissions/detail/339319929/)
     public class Trie
     {
         TrieNode root;

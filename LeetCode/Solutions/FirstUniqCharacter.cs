@@ -6,7 +6,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize this. Slower than 70% of submissions
+        // TODO: Optimize. Beats 30.00% of submissions (https://leetcode.com/submissions/detail/334816601/)
         public int FirstUniqChar(string s)
         {
             var uniqueChars = new Dictionary<char, int>();

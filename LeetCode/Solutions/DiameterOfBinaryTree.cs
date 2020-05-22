@@ -6,9 +6,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize 
-        //  Runtime: 112 ms, faster than 17.37%.
-        //  Memory Usage: 26.3 MB, less than 25.00%
+        // TODO: Optimize. Beats 18.22% of submissions (https://leetcode.com/submissions/detail/341321059/)
         public int DiameterOfBinaryTree(TreeNode root)
         {
             if (root == null) return 0;

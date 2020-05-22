@@ -5,7 +5,7 @@ namespace LeetCode
 {
     public partial class Solution
     {
-        // TODO: Optimize. Runtime beats 26.95% of submissions. Runtime: 316 ms, Memory Usage: 35.7 MB
+        // TODO: Optimize? Beats 50.93% of submissions (https://leetcode.com/submissions/detail/341276328/)
         public IList<int> FindAnagrams(string s, string p)
         {
             var startIndices = new List<int>();
