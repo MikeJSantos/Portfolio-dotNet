@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBookManager", "eBookManager\eBookManager.csproj", "{4F03438E-90B0-4D05-9CEA-5AE939F84016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eBookManager", "eBookManager\eBookManager.csproj", "{4F03438E-90B0-4D05-9CEA-5AE939F84016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBookManager.Engine", "eBookManager.Engine\eBookManager.Engine.csproj", "{C61A4933-B678-4FA8-9199-4638A3626A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eBookManager.Engine", "eBookManager.Engine\eBookManager.Engine.csproj", "{C61A4933-B678-4FA8-9199-4638A3626A92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBookManager.Helper", "eBookManager.Helper\eBookManager.Helper.csproj", "{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4F03438E-90B0-4D05-9CEA-5AE939F84016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +43,23 @@ Global
 		{C61A4933-B678-4FA8-9199-4638A3626A92}.Release|x64.Build.0 = Release|Any CPU
 		{C61A4933-B678-4FA8-9199-4638A3626A92}.Release|x86.ActiveCfg = Release|Any CPU
 		{C61A4933-B678-4FA8-9199-4638A3626A92}.Release|x86.Build.0 = Release|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Debug|x64.Build.0 = Debug|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Release|x64.ActiveCfg = Release|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Release|x64.Build.0 = Release|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{20E47562-DA99-48F0-AEDA-6894E2ABD7F2}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D9F9065-F60A-426C-9BC8-E7AE9B66C51E}
 	EndGlobalSection
 EndGlobal
