@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.btnSelectSourceFolder = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvFoundBooks = new System.Windows.Forms.TreeView();
             this.gbVirtualStorageSpaces = new System.Windows.Forms.GroupBox();
+            this.tbDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSaveStorageSpace = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,14 +40,14 @@
             this.dlVirtualStorageSpaces = new System.Windows.Forms.ComboBox();
             this.gbFileDetails = new System.Windows.Forms.GroupBox();
             this.lblSize = new System.Windows.Forms.Label();
-            this.tbSize = new System.Windows.Forms.TextBox();
+            this.tbFileSize = new System.Windows.Forms.TextBox();
             this.tbPath = new System.Windows.Forms.TextBox();
             this.lblPath = new System.Windows.Forms.Label();
             this.lblCreated = new System.Windows.Forms.Label();
             this.lblLastAccessed = new System.Windows.Forms.Label();
             this.lblExtension = new System.Windows.Forms.Label();
-            this.dtCreated = new System.Windows.Forms.DateTimePicker();
-            this.dtLastAccessed = new System.Windows.Forms.DateTimePicker();
+            this.dtDateCreated = new System.Windows.Forms.DateTimePicker();
+            this.dtDateLastAccessed = new System.Windows.Forms.DateTimePicker();
             this.tbFileExtension = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.tbFileName = new System.Windows.Forms.TextBox();
@@ -67,8 +69,6 @@
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblPublisher = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.tbDescription = new System.Windows.Forms.TextBox();
             this.gbVirtualStorageSpaces.SuspendLayout();
             this.gbFileDetails.SuspendLayout();
             this.gbBookDetails.SuspendLayout();
@@ -82,13 +82,15 @@
             this.btnSelectSourceFolder.TabIndex = 0;
             this.btnSelectSourceFolder.Text = "Select Source Folder";
             this.btnSelectSourceFolder.UseVisualStyleBackColor = true;
+            this.btnSelectSourceFolder.Click += new System.EventHandler(this.BtnSelectSourceFolder_Click);
             // 
-            // treeView1
+            // tvFoundBooks
             // 
-            this.treeView1.Location = new System.Drawing.Point(13, 49);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(468, 302);
-            this.treeView1.TabIndex = 1;
+            this.tvFoundBooks.Location = new System.Drawing.Point(13, 49);
+            this.tvFoundBooks.Name = "tvFoundBooks";
+            this.tvFoundBooks.Size = new System.Drawing.Size(468, 302);
+            this.tvFoundBooks.TabIndex = 1;
+            this.tvFoundBooks.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvFoundBooks_AfterSelect);
             // 
             // gbVirtualStorageSpaces
             // 
@@ -105,6 +107,23 @@
             this.gbVirtualStorageSpaces.TabIndex = 2;
             this.gbVirtualStorageSpaces.TabStop = false;
             this.gbVirtualStorageSpaces.Text = "Virtual Storage Spaces";
+            // 
+            // tbDescription
+            // 
+            this.tbDescription.Location = new System.Drawing.Point(7, 87);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(456, 130);
+            this.tbDescription.TabIndex = 6;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(7, 63);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(88, 20);
+            this.lblDescription.TabIndex = 5;
+            this.lblDescription.Text = "Description:";
             // 
             // btnCancel
             // 
@@ -152,14 +171,14 @@
             // gbFileDetails
             // 
             this.gbFileDetails.Controls.Add(this.lblSize);
-            this.gbFileDetails.Controls.Add(this.tbSize);
+            this.gbFileDetails.Controls.Add(this.tbFileSize);
             this.gbFileDetails.Controls.Add(this.tbPath);
             this.gbFileDetails.Controls.Add(this.lblPath);
             this.gbFileDetails.Controls.Add(this.lblCreated);
             this.gbFileDetails.Controls.Add(this.lblLastAccessed);
             this.gbFileDetails.Controls.Add(this.lblExtension);
-            this.gbFileDetails.Controls.Add(this.dtCreated);
-            this.gbFileDetails.Controls.Add(this.dtLastAccessed);
+            this.gbFileDetails.Controls.Add(this.dtDateCreated);
+            this.gbFileDetails.Controls.Add(this.dtDateLastAccessed);
             this.gbFileDetails.Controls.Add(this.tbFileExtension);
             this.gbFileDetails.Controls.Add(this.lblName);
             this.gbFileDetails.Controls.Add(this.tbFileName);
@@ -182,10 +201,10 @@
             // 
             // tbSize
             // 
-            this.tbSize.Location = new System.Drawing.Point(123, 191);
-            this.tbSize.Name = "tbSize";
-            this.tbSize.Size = new System.Drawing.Size(163, 27);
-            this.tbSize.TabIndex = 10;
+            this.tbFileSize.Location = new System.Drawing.Point(123, 191);
+            this.tbFileSize.Name = "tbSize";
+            this.tbFileSize.Size = new System.Drawing.Size(163, 27);
+            this.tbFileSize.TabIndex = 10;
             // 
             // tbPath
             // 
@@ -233,19 +252,19 @@
             // 
             // dtCreated
             // 
-            this.dtCreated.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCreated.Location = new System.Drawing.Point(123, 124);
-            this.dtCreated.Name = "dtCreated";
-            this.dtCreated.Size = new System.Drawing.Size(163, 27);
-            this.dtCreated.TabIndex = 4;
+            this.dtDateCreated.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDateCreated.Location = new System.Drawing.Point(123, 124);
+            this.dtDateCreated.Name = "dtCreated";
+            this.dtDateCreated.Size = new System.Drawing.Size(163, 27);
+            this.dtDateCreated.TabIndex = 4;
             // 
             // dtLastAccessed
             // 
-            this.dtLastAccessed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtLastAccessed.Location = new System.Drawing.Point(123, 90);
-            this.dtLastAccessed.Name = "dtLastAccessed";
-            this.dtLastAccessed.Size = new System.Drawing.Size(163, 27);
-            this.dtLastAccessed.TabIndex = 3;
+            this.dtDateLastAccessed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDateLastAccessed.Location = new System.Drawing.Point(123, 90);
+            this.dtDateLastAccessed.Name = "dtLastAccessed";
+            this.dtDateLastAccessed.Size = new System.Drawing.Size(163, 27);
+            this.dtDateLastAccessed.TabIndex = 3;
             // 
             // tbFileExtension
             // 
@@ -436,23 +455,6 @@
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "Price:";
             // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(7, 63);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(88, 20);
-            this.lblDescription.TabIndex = 5;
-            this.lblDescription.Text = "Description:";
-            // 
-            // tbDescription
-            // 
-            this.tbDescription.Location = new System.Drawing.Point(7, 87);
-            this.tbDescription.Multiline = true;
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(456, 130);
-            this.tbDescription.TabIndex = 6;
-            // 
             // ImportBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -462,7 +464,7 @@
             this.Controls.Add(this.gbFileDetails);
             this.Controls.Add(this.gbVirtualStorageSpaces);
             this.Controls.Add(this.btnSelectSourceFolder);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.tvFoundBooks);
             this.Name = "ImportBooks";
             this.Text = "ImportBooks";
             this.Load += new System.EventHandler(this.ImportBooks_Load);
@@ -479,13 +481,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnSelectSourceFolder;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvFoundBooks;
         private System.Windows.Forms.GroupBox gbVirtualStorageSpaces;
         private System.Windows.Forms.GroupBox gbFileDetails;
         private System.Windows.Forms.Label lblLastAccessed;
         private System.Windows.Forms.Label lblExtension;
-        private System.Windows.Forms.DateTimePicker dtCreated;
-        private System.Windows.Forms.DateTimePicker dtLastAccessed;
+        private System.Windows.Forms.DateTimePicker dtDateCreated;
+        private System.Windows.Forms.DateTimePicker dtDateLastAccessed;
         private System.Windows.Forms.TextBox tbFileExtension;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox tbFileName;
@@ -493,7 +495,7 @@
         private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Label lblCreated;
         private System.Windows.Forms.Label lblSize;
-        private System.Windows.Forms.TextBox tbSize;
+        private System.Windows.Forms.TextBox tbFileSize;
         private System.Windows.Forms.TextBox tbPath;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblDatePublished;

@@ -5,14 +5,14 @@ namespace eBookManager.Engine
 {
     public class DocumentEngine
     {
-        public (string fileName, string fileExtension, DateTime dateCreated, DateTime dateLastAccessed, long fileLength, bool error) GetFileProperties(string filePath)
+        public (string fileName, string fileExtension, DateTime dateCreated, DateTime dateLastAccessed, long fileSize, bool error) GetFileProperties(string filePath)
         {
             var fileProperties = (
                 fileName: string.Empty, 
                 fileExtension: string.Empty, 
                 dateCreated: DateTime.MinValue, 
                 dateLastAccessed: DateTime.MinValue,
-                fileLength: 0L,
+                fileSize: 0L,
                 error: false
             );
 
